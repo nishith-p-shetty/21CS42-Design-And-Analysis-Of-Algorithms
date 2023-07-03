@@ -38,34 +38,32 @@ using namespace std;
 
 int main()
 {
-    int *a, temp, i, j, pos, n;
+    int a[100], temp, i, j, pos, n;
     cout<<"Enter number of elements : ";
     cin >> n;
-    a = new int(n);
     cout << "Input " << n << " numbers :\n";
     for(i = 0 ; i < n ; i++)
     {
-        cin >> *(a+i);
+        cin >> a[i];
     }
     for(i = 0 ; i < n-1 ; i++)
     {
         pos = i;
-        temp = *(a+i);
+        temp = a[i];
         for(j = (i+1) ; j <= (n-1) ; j++)
         {
-            if(temp > (*(a+j)))
+            if(temp > a[j])
             {
-                temp = *(a+j);
+                temp = a[j];
                 pos = j;
             }
         }
-        *(a+pos) = *(a+i);
-        *(a+i) = temp;
+        a[pos] = a[i];
+        a[i] = temp;
     }
     cout << "Sorted elements are :\n";
     for(i = 0 ; i < n ; i++)
     {
         cout << a[i] << "\n";
     }
-    delete a;
 }

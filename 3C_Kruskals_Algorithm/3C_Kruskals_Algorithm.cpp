@@ -4,6 +4,21 @@
         Use Union-Find algorithms in your program.
 
     OUTPUT :
+        Enter the number of vertices : 3
+        Enter the cost matrix :
+        [1][1] : -1
+        [1][2] : 20
+        [1][3] : 10
+        [2][1] : 20
+        [2][2] : -1
+        [2][3] : 30
+        [3][1] : 10
+        [3][2] : 30
+        [3][3] : -1
+        Cost of Minimum Spanning Tree : 30
+        Spanning tree nodes are :
+        1 -> 3
+        1 -> 2
 */
 
 #include <iostream>
@@ -110,7 +125,7 @@ int stree:: find(int u)
             return parent[u];
         }
     }
-    return NULL;
+    return 0;
 }
 
 void stree:: unit(int u, int v)
@@ -127,7 +142,7 @@ void stree:: unit(int u, int v)
 
 int stree:: empty()
 {
-    for(int i = 1 ; i < n ; i++)
+    for(int i = 1 ; i <= n ; i++)
     {
         for(int j = 1 ; j <= n ; j++)
         {

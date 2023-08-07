@@ -1,3 +1,43 @@
+/*
+    QUESTION :
+        To find Minimum Cost Spanning Tree of a given connected undirected graph using Kruskal's algorithm.
+        Use Union-Find algorithms in your program.
+
+    OUTPUT :
+        Enter the number of vertices : 5
+        Enter the cost matrix :
+        [1][1] : -1
+        [1][2] : 10
+        [1][3] : 40
+        [1][4] : 999
+        [1][5] : 50
+        [2][1] : 10
+        [2][2] : -1
+        [2][3] : 999
+        [2][4] : 20
+        [2][5] : 80
+        [3][1] : 40
+        [3][2] : 999
+        [3][3] : -1
+        [3][4] : 30
+        [3][5] : 60
+        [4][1] : 999
+        [4][2] : 20
+        [4][3] : 30
+        [4][4] : -1
+        [4][5] : 70
+        [5][1] : 50
+        [5][2] : 80
+        [5][3] : 60
+        [5][4] : 70
+        [5][5] : -1
+        Cost of Minimum Spanning Tree : 110
+        Spanning tree nodes are :
+        1 -> 2
+        2 -> 4
+        3 -> 4
+*/
+
 #include <iostream>
 
 using namespace std;

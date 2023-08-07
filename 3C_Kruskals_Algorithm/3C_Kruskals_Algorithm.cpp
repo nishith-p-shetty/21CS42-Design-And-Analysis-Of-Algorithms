@@ -1,31 +1,8 @@
-/*
-    QUESTION :
-        To find Minimum Cost Spanning Tree of a given connected undirected graph using Kruskal's algorithm.
-        Use Union-Find algorithms in your program.
-
-    OUTPUT :
-        Enter the number of vertices : 3
-        Enter the cost matrix :
-        [1][1] : -1
-        [1][2] : 20
-        [1][3] : 10
-        [2][1] : 20
-        [2][2] : -1
-        [2][3] : 30
-        [3][1] : 10
-        [3][2] : 30
-        [3][3] : -1
-        Cost of Minimum Spanning Tree : 30
-        Spanning tree nodes are :
-        1 -> 3
-        1 -> 2
-*/
-
 #include <iostream>
 
 using namespace std;
 
-const int MAX = 15;
+const int MAX = 10;
 
 class stree
 {
@@ -47,23 +24,23 @@ class stree
 
 void stree:: heap()
 {
-    int i, j, min = 999;
-    for(i = 1 ; i <= n ; i++)
+    int MIN = 999;
+    for(int i = 1 ; i <= n ; i++)
     {
-        for(j = 1 ; j <= n ; j++)
+        for(int j = i + 1 ; j <= n ; j++)
         {
             if (cost[i][j] != -1)
             {
-                if (cost[i][j] < min)
+                if (cost[i][j] < MIN)
                 {
-                    min = cost[i][j];
+                    MIN = cost[i][j];
                     p = i;
                     q = j;
                 }
             }
         }
     }
-    min1 = min;
+    min1 = MIN;
 }
 
 void stree:: read()
@@ -105,9 +82,9 @@ int stree:: kruskal()
         }
         heap();
     }
-    if(i != n-1)
+    if(i != (n-1))
     {
-        cout << "NO Minimum Spanning Tree";
+        cout << "No Minimum Spanning Tree";
         return 0;
     }
     else
@@ -132,9 +109,12 @@ void stree:: unit(int u, int v)
 {
     for(int i = 1 ; i <= n ; i++)
     {
-        if(parent[i] == parent[v])
+        if(i != v)
         {
-            parent[i] = parent[v];
+            if(parent[i] == parent[v])
+            {
+                parent[i] = parent[v];
+            }
         }
     }
     parent[v] = parent[u];

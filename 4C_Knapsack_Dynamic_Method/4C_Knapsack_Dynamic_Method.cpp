@@ -36,7 +36,7 @@ class Ksack
             void solutionVector();
             void print();
             int maximum(int, int);
-            ~Ksack() { delete [] p; delete [] w; };
+            ~Ksack() { delete [] p; delete [] w; delete[] x;};
 };
 
 void Ksack::Knapsack()
@@ -44,6 +44,7 @@ void Ksack::Knapsack()
     int i, maxprofit;
     p = new int[n + 1];
     w = new int[n + 1];
+    x = new float[n + 1];
     cout << "Enter the number of objects : ";
     cin >> n;
     cout << "Enter Weight :\n";
@@ -60,6 +61,7 @@ void Ksack::Knapsack()
     }
     cout << "Enter Knapsack Capacity : ";
     cin >> capicity;
+    x[0] = 0;
     maxprofit = f(1, capicity);
     cout << "The Optimal Solution : " << maxprofit << "\n";
     cout << "The Solution Vector : ";
